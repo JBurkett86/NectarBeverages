@@ -1,0 +1,474 @@
+/* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
+/* Basic css resetting */
+body { margin: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;}
+a { text-decoration: none; color:black; }
+
+
+/* ==========HEADER============= */
+html {
+    scroll-behavior: smooth; /* Scroll action when clicking buttons transitions slower*/
+}
+
+/* ==========LOGO============= */
+/* ==========NAVIGATION============= */
+#navbar {
+    position: sticky; /* Always at the top */
+    top: 0;
+    background-color: #7AB49Cff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow to show near similar colours */
+    z-index: 1000; /* Keep navbar on top of other elements */
+    padding: 10px 10px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Align links and logo */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px; /* Fixed width for buttons */
+    height: 40px; /* Fixed height for buttons */
+    text-decoration: none;
+    color: #1A2023ff; 
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #7ebfcd;
+    border-radius: 5px; /* Round all buttons */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Change button colour slowly when hovering*/
+    text-align: center; /* Center text vertically */
+    line-height: 40px; 
+}
+
+.nav-link:hover {
+    color: #7ebfcd; /* Change color on hover */
+    background-color: #1A2023ff; 
+}
+
+.nav-logo {
+    text-align: center;
+}
+
+.nav-logo-image {
+    height: 40px; /* Adjust logo height */
+    width: auto;
+    border-radius: 5px; /* Add rounded corners to keep in theme */
+    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+}
+
+.nav-logo img:hover {
+    transform: scale(1.1); /* Slight image size change on hover */
+}
+
+/* ==========MAIN BODY CONTENT============= */
+/* Section Titles */
+.section-title {
+    font-family: 'Cinzel', serif; 
+    font-size: 30px;
+    color: #1A2023ff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Benefit Text Titles */
+.benefit-text h3,
+.product-title {
+    font-family: 'Inter', sans-serif; 
+    font-weight: 600;
+    font-size: 20px;
+    color: #BCCCB5ff;
+    margin-bottom: 10px;
+}
+
+/* ==========Hero Section 1 Styling============= */
+#hero {
+    position: relative; /* Allow child elements to position relative to this hero image */
+    font-family: 'Cinzel', serif; 
+    font-size: 48px;
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center; /* All content and text center aligned */
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Ensures no extra content shows */
+}
+
+.hero-slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slide 10s infinite; /* Transition between images */
+    animation-delay: 3s; /* Delay the start of the animation */
+}
+
+.hero-image {
+    flex: 0 0 100%; /* Each image takes up the  entirecontainer */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(80%); /* Reduce image brightness so it doesn't contrast too much  */
+}
+
+.slide1 {
+    background-image: url('../images/hero-image-1.jpg'); /* First image */
+}
+
+.slide2 {
+    background-image: url('../images/hero-image-2.jpg'); /* Second image */
+}
+
+/* Keyframes for hero image transition */
+@keyframes slide {
+    0%, 25% { transform: translateX(0); } /* Show first image */
+    50%, 75% { transform: translateX(-100%); }/* Show second image in full */
+    100% { transform: translateX(0); }/* Return to first image */ 
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* center element  horizontally and vertically relative to parent*/ 
+    color: white;
+    z-index: 1; /* Makes sure it stays on top of images  during animation*/
+}
+
+/* Call To Action Button - Center */
+.cta-button {
+    padding: 10px 20px;
+    background-color: #7ebfcd; 
+    color: #1A2023ff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Change button colour slowly when hovering*/
+
+}
+
+.cta-button:hover {
+    color: #7ebfcd; /* Change color on hover */
+    background-color: #1A2023ff; 
+}
+
+/* Top-left Button */
+.top-left-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px 16px;
+    background-color: #7ebfcd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.top-left-button:hover {
+    background-color: #c0eaf4; 
+}
+
+/* ==========Products Section 2 Styling ============= */
+#product-highlights {
+    padding: 50px 20px;
+    background-color: #c0eaf4;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid; /* Fix contents in a grid */
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout for desktop */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-title {
+    font-size: 20px;
+    color: #7ebfcd;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #000000;
+}
+
+/* ==========Health Benefits Section 3 Styling============= */
+#health-benefits {
+    padding: 50px 20px;
+    background-color: #BCCCB5ff; 
+    text-align: center;
+}
+
+/* Benefit Item Styles */
+.benefits-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eaf7fb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow to show near similar colours */
+    text-align: left;
+}
+
+.benefit-item.reverse {
+    flex-direction: row-reverse; /* Swap image and text positions */
+}
+
+.benefit-image {
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+.benefit-text {
+    width: 55%;
+}
+
+.benefit-text h3 {
+    font-size: 20px;
+    color: #7ebfcd; 
+    margin-bottom: 10px;
+}
+
+.benefit-text p {
+    font-size: 16px;
+    color: #000000;
+}
+
+/* ==========Testimonials Section 4 Styling============= */
+#testimonials {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #c0eaf4;
+    overflow: hidden; /* Keep only visible areas to show */
+   
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto; /* Turn on horizontal scrolling */
+    gap: 20px;
+    scroll-snap-type: x mandatory; /* Turn on snap scrolling */
+    gap: 20px;
+    padding: 10px;
+    max-width: 100%; /* Ensure the slider container width matches its parent */
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    flex: 0 0 33.33%; /* Show 3 cards at a time */
+    scroll-snap-align: center; /* Make sure the card snaps into the center */
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow to show near similar colours */
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Prevent padding from affecting card width */
+}
+
+.testimonial-card p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #7ebfcd;
+}
+
+/* Hide horizontal scrollbar for a cleaner look */
+.testimonial-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-slider {
+    -ms-overflow-style: none; /* Hide for IE and Edge */
+    scrollbar-width: none; /* Hide for Firefox */
+}
+
+/* ==========FOOTER STYLIING============= */
+#footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #BCCCB5ff; 
+    color: #ffffff; 
+}
+
+.footer-logo {
+    display: inline-block; /* Keep the logo inline with parent element and without line breaks*/
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 100px; 
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Add rounded corners to keep in the theme */
+    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+}
+
+.footer-logo img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Social Media Icons */
+.footer-social-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons */
+    gap: 15px; /* Increase spacing between icons */
+    margin-top: 10px;
+}
+
+.footer-social-icons i {
+    color: #7ebfcd; 
+    transition: color 0.3s ease, transform 0.3s ease; /* Make colour change animate and not instant */
+    
+}
+
+.footer-social-icons i:hover {
+    color: #1A2023ff; /* Change color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.footer-disclaimer {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #1A2023ff; 
+}
+
+
+/* ==========RESPONSIVE DESIGN============= */
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 14px; /* Smaller text */
+    }
+
+    .nav-logo-image {
+        height: 30px; /* Smaller logo */
+    }
+}
+
+/* ===== TABLET: Media queries for verticle and horizontal ===== */
+@media only screen and (max-width: 1024px) {
+    #hero {
+        height: 70vh;
+    }
+    .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns to fit better */
+    }
+
+    .benefit-item {
+        flex-direction: column; /* Change to center column up and down */
+        text-align: center;
+    }
+
+    .benefit-item.reverse {
+        flex-direction: column; /* Reverse no longer needed */
+    }
+
+    .benefit-image {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .benefit-text {
+        width: 100%;
+    }
+    .testimonial-slider {
+        gap: 15px;
+    }
+    .testimonial-card {
+        flex: 0 0 50%; /* Show 2 cards at a time on tablets */
+    }
+}
+
+/* ===== MOBILE: Media queries for small mobile resolution. ===== */
+@media only screen and (max-width: 360px) {
+    #hero {
+        height: 60vh;
+    }
+    .cta-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .product-grid {
+        display: flex; /* All products in one column */
+        flex-direction: column;
+    }
+
+    .benefit-item {
+        padding: 15px;
+    }
+
+    .benefit-text h3 {
+        font-size: 18px;
+    }
+
+    .benefit-text p {
+        font-size: 14px;
+    }
+
+    .testimonial-slider {
+        gap: 10px;
+    }
+
+    .testimonial-card {
+        flex: 0 0 100%; /* Show 1 card at a time on mobile */
+    }
+
+}
